@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sd.tech.entity.Book;
+import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer;
+import org.springframework.context.annotation.Bean;
+import io.micrometer.core.instrument.MeterRegistry;
 
 @SpringBootApplication
 @RestController
@@ -48,5 +51,10 @@ public class DemoBooksListApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoBooksListApplication.class, args);
 	}
+
+	@Bean
+    MeterRegistryCustomizer<MeterRegistry> metricsCommonTags() {
+        return registry -> registry.config().commonTags("application", "demo-book-list");
+    }
 
 }
