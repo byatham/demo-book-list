@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /opt
 COPY target/*.jar /opt/demo-book-list.jar
 ENTRYPOINT exec java $JAVA_OPTS -jar demo-book-list.jar
