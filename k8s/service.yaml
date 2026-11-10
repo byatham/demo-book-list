@@ -5,7 +5,8 @@ metadata:
   name: book-api-service
 
 spec:
-  type: ClusterIP
+  --type: ClusterIP
+  type: NodePort
 
   selector:
     app: book-api
