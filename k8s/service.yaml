@@ -5,7 +5,6 @@ metadata:
   name: book-api-service
 
 spec:
-  --type: ClusterIP
   type: NodePort
 
   selector:
@@ -15,3 +14,4 @@ spec:
     - protocol: TCP
       port: 8082
       targetPort: 8082
+      nodePort: 30082

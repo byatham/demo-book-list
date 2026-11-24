@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: book-api
-          image: book-crud-api:1.0
+          image: yathambalaiah/demo-book-list:v1
           imagePullPolicy: IfNotPresent
 
           ports:

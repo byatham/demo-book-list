@@ -1,0 +1,105 @@
+
+{
+  "customers": [
+    {
+      "id": 101,
+      "name": "Rahul Sharma",
+      "gender": "Male",
+      "age": 28,
+      "email": "rahul@example.com",
+      "city": "Hyderabad",
+      "accountType": "SAVINGS",
+      "balance": 50000
+    },
+    {
+      "id": 102,
+      "name": "Priya Reddy",
+      "gender": "Female",
+      "age": 26,
+      "email": "priya@example.com",
+      "city": "Bangalore",
+      "accountType": "CURRENT",
+      "balance": 75000
+    },
+    {
+      "id": 103,
+      "name": "Arjun Kumar",
+      "gender": "Male",
+      "age": 32,
+      "email": "arjun@example.com",
+      "city": "Chennai",
+      "accountType": "SAVINGS",
+      "balance": 62000
+    },
+    {
+      "id": 104,
+      "name": "Sneha Patel",
+      "gender": "Female",
+      "age": 29,
+      "email": "sneha@example.com",
+      "city": "Mumbai",
+      "accountType": "SAVINGS",
+      "balance": 85000
+    },
+    {
+      "id": 105,
+      "name": "Vikram Singh",
+      "gender": "Male",
+      "age": 35,
+      "email": "vikram@example.com",
+      "city": "Delhi",
+      "accountType": "CURRENT",
+      "balance": 120000
+    },
+    {
+      "id": 106,
+      "name": "Ananya Rao",
+      "gender": "Female",
+      "age": 24,
+      "email": "ananya@example.com",
+      "city": "Hyderabad",
+      "accountType": "SAVINGS",
+      "balance": 45000
+    },
+    {
+      "id": 107,
+      "name": "Karthik Reddy",
+      "gender": "Male",
+      "age": 30,
+      "email": "karthik@example.com",
+      "city": "Pune",
+      "accountType": "CURRENT",
+      "balance": 95000
+    },
+    {
+      "id": 108,
+      "name": "Divya Sharma",
+      "gender": "Female",
+      "age": 27,
+      "email": "divya@example.com",
+      "city": "Bangalore",
+      "accountType": "SAVINGS",
+      "balance": 58000
+    },
+    {
+      "id": 109,
+      "name": "Suresh Kumar",
+      "gender": "Male",
+      "age": 40,
+      "email": "suresh@example.com",
+      "city": "Chennai",
+      "accountType": "CURRENT",
+      "balance": 150000
+    },
+    {
+      "id": 110,
+      "name": "Meera Nair",
+      "gender": "Female",
+      "age": 31,
+      "email": "meera@example.com",
+      "city": "Kochi",
+      "accountType": "SAVINGS",
+      "balance": 72000
+    }
+  ]
+}
