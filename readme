@@ -1,0 +1,14 @@
+
+docker compose up -d
+
+docker compose ps
+docker compose logs -f
+
+
+Grafana	Open http://localhost:3000	admin
+Prometheus	Open http://localhost:9090	No authentication by default
+Splunk	Open http://localhost:8000?	admin
+PostgreSQL	localhost:5432	banking_user
+Redis	localhost:6379	default
+
+Passwords: GrafanaLocal@123, SplunkLocal@123, PostgresLocal@123, RedisLocal@123 respectively.
