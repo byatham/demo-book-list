@@ -1,0 +1,40 @@
+kubectl get nods
+kubectl get pods
+kubectl get ns
+kubectl get svc
+kubectl config set-context --current --namespace=default
+
+kubectl logs pods podname -n namespace name
+
+kubectl get deployments
+
+#in killercoda already git available
+# to install java run below
+apt update
+apt install -y openjdk-17-jdk
+
+check java version:
+java -version
+javac -version
+
+Step 2: Build using Maven Wrapper
+chmod +x mvnw
+./mvnw -version
+
+build now
+./mvnw clean package -DskipTests
+ls -lh target/*.jar
+
+docker also available
+
+docker --version
+
+docker build -t book-demo .
+docker login
+docker tag demo-books-list:latest YOUR_DOCKERHUB_USERNAME/demo-books-list:v1
+
+docker push YOUR_DOCKERHUB_USERNAME/demo-books-list:v1
+
+kubectl create namespace java-app
+
+
