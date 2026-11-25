@@ -37,35 +37,13 @@ services:
     restart: unless-stopped
     ports:
       - "9090:9090"
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--web.enable-lifecycle'
-      - '--config.file=/etc/prometheus/generated/prometheus.yml'
-    entrypoint:
-      - /bin/sh
-      - -c
-      - |
-        cat > /etc/prometheus/generated/prometheus.yml <<'EOF'
-        global:
-          scrape_interval: 15s
-        scrape_configs:
-          - job_name: prometheus
-            static_configs:
-              - targets: ['localhost:9090']
-          - job_name: spring-boot
-            metrics_path: /actuator/prometheus
-            static_configs:
-              - targets: ['host.docker.internal:8080']
-        EOF
-        exec /bin/prometheus \
-          --config.file=/etc/prometheus/generated/prometheus.yml \
-          --storage.tsdb.path=/prometheus \
-          --web.enable-lifecycle
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.enable-lifecycle"
     networks:
       - monitoring-network
 
@@ -86,22 +64,30 @@ services:
     networks:
       - monitoring-network
 
-  # Splunk Enterprise
+   # Splunk Enterprise
   splunk:
     image: splunk/splunk:latest
     container_name: splunk
     restart: unless-stopped
+
     environment:
+      SPLUNK_GENERAL_TERMS: --accept-sgt-current-at-splunk-com
       SPLUNK_START_ARGS: --accept-license
       SPLUNK_PASSWORD: SplunkLocal@123
+      SPLUNK_LICENSE_URI: Free
+
     ports:
       - "8000:8000"
       - "8089:8089"
       - "8088:8088"
       - "9997:9997"
+
     volumes:
       - splunk_etc:/opt/splunk/etc
       - splunk_var:/opt/splunk/var
+      - ../logs:/app-logs:ro
+      - ../splunk/book_api:/opt/splunk/etc/apps/book_api
+
     networks:
       - monitoring-network
 

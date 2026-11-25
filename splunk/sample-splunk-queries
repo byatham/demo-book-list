@@ -1,0 +1,16 @@
+index=main sourcetype=book_api ERROR
+
+index=main sourcetype=book_api
+| head 10
+| table _time _raw
+
+index=main sourcetype=book_api
+| rex field=_raw "(?i)\b(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\b"
+| search log_level="ERROR"
+| timechart span=5m count AS error_count
+
+
+index=main sourcetype=book_api
+| rex field=_raw "(?i)\b(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\b"
+| stats count by log_level
+

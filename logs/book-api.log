@@ -1,0 +1,200 @@
+2026-11-26 01:05:11.986 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - Starting DemoBooksListApplication using Java 17.0.7 with PID 13460 (D:\SD-Works\demo-book-list\target\classes started by Lenovo in D:\SD-Works\demo-book-list)
+2026-11-26 01:05:11.986 [restartedMain] DEBUG [] c.sd.tech.DemoBooksListApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-11-26 01:05:11.986 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - The following 1 profile is active: "sre-lab"
+2026-11-26 01:05:12.373 [restartedMain] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-11-26 01:05:12.374 [restartedMain] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-26 01:05:12.374 [restartedMain] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-11-26 01:05:12.409 [restartedMain] INFO  [] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-26 01:05:12.409 [restartedMain] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 421 ms
+2026-11-26 01:05:12.442 [restartedMain] DEBUG [] c.s.t.f.RequestCorrelationFilter - Filter 'requestCorrelationFilter' configured for use
+2026-11-26 01:05:12.460 [restartedMain] INFO  [] c.s.t.c.SreSimulationController - SRE simulation controller initialized
+2026-11-26 01:05:12.619 [restartedMain] INFO  [] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-11-26 01:05:12.623 [restartedMain] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-11-26 01:05:12.651 [restartedMain] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path ''
+2026-11-26 01:05:12.667 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - Started DemoBooksListApplication in 0.749 seconds (process running for 4439.419)
+2026-11-26 01:05:12.671 [restartedMain] INFO  [] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   LogFileWebEndpointAutoConfiguration#logFileWebEndpoint matched:
+      - Log File found logging.file.name logs/book-api.log (LogFileWebEndpointAutoConfiguration.LogFileCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.logging.LogFileWebEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SreSimulationController matched:
+      - @ConditionalOnProperty (sre.lab.enabled=true) matched (OnPropertyCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-11-26 01:05:20.328 [http-nio-8082-exec-2] INFO  [] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-26 01:05:20.328 [http-nio-8082-exec-2] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-26 01:05:20.330 [http-nio-8082-exec-2] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-11-26 01:05:20.947 [http-nio-8082-exec-4] INFO  [9136dfba-b5f5-4b92-83d2-9e0009bd78f2] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 120 ms
+2026-11-26 01:06:15.116 [http-nio-8082-exec-3] WARN  [d9464574-4570-4430-8435-483c4cbc051f] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:06:20.117 [http-nio-8082-exec-3] WARN  [d9464574-4570-4430-8435-483c4cbc051f] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5000 operations=2300967243629576
+2026-11-26 01:06:29.798 [http-nio-8082-exec-5] WARN  [1a703847-590d-4480-9c73-f998ee3eed0d] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:06:34.798 [http-nio-8082-exec-5] WARN  [1a703847-590d-4480-9c73-f998ee3eed0d] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5000 operations=2334130883998664
+2026-11-26 01:06:36.025 [http-nio-8082-exec-6] WARN  [ac98f1ef-077c-4b83-906c-08838667ae11] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:06:41.025 [http-nio-8082-exec-6] WARN  [ac98f1ef-077c-4b83-906c-08838667ae11] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5002 operations=2329678178904032
+2026-11-26 01:06:42.423 [http-nio-8082-exec-8] WARN  [0684ee6b-6160-4608-b663-27ff66b7cd42] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:06:47.423 [http-nio-8082-exec-8] WARN  [0684ee6b-6160-4608-b663-27ff66b7cd42] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5000 operations=2281062388282664
+2026-11-26 01:06:55.200 [http-nio-8082-exec-10] WARN  [6f713bd0-8be8-4eb2-891e-cbf4aa194dcb] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:07:00.200 [http-nio-8082-exec-10] WARN  [6f713bd0-8be8-4eb2-891e-cbf4aa194dcb] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5000 operations=2295685072532728
+2026-11-26 01:07:02.039 [http-nio-8082-exec-2] WARN  [2106fd0f-364e-460e-a130-4238d38f684a] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:07:07.040 [http-nio-8082-exec-2] WARN  [2106fd0f-364e-460e-a130-4238d38f684a] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5001 operations=2264092725388461
+2026-11-26 01:07:08.189 [http-nio-8082-exec-1] WARN  [54f2e551-3e25-4cfe-a983-31021dccd8b6] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:07:13.190 [http-nio-8082-exec-1] WARN  [54f2e551-3e25-4cfe-a983-31021dccd8b6] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5001 operations=2325515248114388
+2026-11-26 01:07:15.097 [http-nio-8082-exec-4] WARN  [398875e5-8523-4568-b155-65bc6a41c4d0] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:07:20.099 [http-nio-8082-exec-4] WARN  [398875e5-8523-4568-b155-65bc6a41c4d0] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5002 operations=2380567572866772
+2026-11-26 01:07:21.122 [http-nio-8082-exec-5] WARN  [e2cf5e65-fc81-4b6e-853e-b1ff4601b26a] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:07:26.123 [http-nio-8082-exec-5] WARN  [e2cf5e65-fc81-4b6e-853e-b1ff4601b26a] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5001 operations=2291875629707078
+2026-11-26 01:07:33.784 [http-nio-8082-exec-6] WARN  [e32295be-5854-4b1c-bceb-019362c3f1c1] c.s.t.c.SreSimulationController - MEMORY_PRESSURE_CREATED incidentId=c8740d03-5d26-4054-968a-fceef1ca37d3 allocatedMB=32 retainedMB=32
+2026-11-26 01:07:35.161 [http-nio-8082-exec-8] WARN  [6f38ded2-108c-4541-83b0-fd7d03fe4f7a] c.s.t.c.SreSimulationController - MEMORY_PRESSURE_CREATED incidentId=ff10a360-7841-4bb6-b95e-563a6b0fce7d allocatedMB=32 retainedMB=64
+2026-11-26 01:07:36.069 [http-nio-8082-exec-9] WARN  [f1a81902-2674-4beb-9961-ccf5b7aa580f] c.s.t.c.SreSimulationController - MEMORY_PRESSURE_CREATED incidentId=62e10b5c-a12e-4553-b426-68707e2eb2d2 allocatedMB=32 retainedMB=96
+2026-11-26 01:07:36.985 [http-nio-8082-exec-10] WARN  [5ed72ee4-1be2-47bc-a0f7-b1145c91763b] c.s.t.c.SreSimulationController - MEMORY_PRESSURE_CREATED incidentId=82e5a4b4-80c6-4584-91d8-7da9bcb8246e allocatedMB=32 retainedMB=128
+2026-11-26 01:07:37.536 [http-nio-8082-exec-3] WARN  [c3f3b1ca-9283-4cef-9636-4a78e107b7ed] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=a5109f59-18ca-433d-931e-613c0cd36d00 requestedMB=32 retainedMB=128
+2026-11-26 01:07:37.992 [http-nio-8082-exec-1] WARN  [890b3100-92bd-43fc-880e-3cb706d12e49] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=efedf8c1-416b-4694-b13a-a3d1d43e9107 requestedMB=32 retainedMB=128
+2026-11-26 01:07:38.219 [http-nio-8082-exec-4] WARN  [74f0feb2-d9b1-43fb-94b2-0aa3a7170932] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=258e9f72-e322-46cf-80b7-6ea831b62742 requestedMB=32 retainedMB=128
+2026-11-26 01:07:40.860 [http-nio-8082-exec-7] WARN  [7b8e1c1f-fde3-43f3-9850-df4045b5fffa] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=07bf539f-e77d-47f2-bbf1-022885cd5e60 requestedMB=32 retainedMB=128
+2026-11-26 01:07:41.388 [http-nio-8082-exec-5] WARN  [306b186f-d1e4-4f09-8c72-a0123d459c8a] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=ab0d9212-e070-46b3-ab18-4a3f05b3932c requestedMB=32 retainedMB=128
+2026-11-26 01:07:41.816 [http-nio-8082-exec-6] WARN  [9017de7d-2872-43d6-9d97-f39105df8852] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=cdaaae19-12cd-489e-b0c6-786d7d1a7099 requestedMB=32 retainedMB=128
+2026-11-26 01:07:42.171 [http-nio-8082-exec-8] WARN  [9427e7a2-bd91-487a-b85e-792aeb589fcb] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=022f69b9-326b-4715-9c58-0446fc342796 requestedMB=32 retainedMB=128
+2026-11-26 01:07:42.571 [http-nio-8082-exec-9] WARN  [8d2884f3-2c55-4586-8823-939a9bab5a5f] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=f37523ea-482c-49f2-b048-1974766c2b88 requestedMB=32 retainedMB=128
+2026-11-26 01:07:42.824 [http-nio-8082-exec-10] WARN  [d023aa6f-4193-4310-a626-e1c187bac0c7] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=eb1ee5df-51c3-4f2b-baa3-31fd48780e58 requestedMB=32 retainedMB=128
+2026-11-26 01:07:43.087 [http-nio-8082-exec-2] WARN  [4a0ddab7-bd7b-4306-b89a-06b9ca5aa7ad] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=68ae94f6-9ca9-4ca2-9fd4-a70502326963 requestedMB=32 retainedMB=128
+2026-11-26 01:07:43.262 [http-nio-8082-exec-3] WARN  [cce14ae5-005b-412d-a4fe-56644655c373] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=fc8477df-5834-494a-a741-71f837b2711b requestedMB=32 retainedMB=128
+2026-11-26 01:07:43.448 [http-nio-8082-exec-1] WARN  [b551c049-7e0d-4350-9551-9e07612eb6c8] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=6a11ab2d-4a23-4a92-8991-faa9acc6475a requestedMB=32 retainedMB=128
+2026-11-26 01:07:43.612 [http-nio-8082-exec-4] WARN  [2844f082-0429-4686-a9f1-455d288131ce] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=9ed4cee5-654c-472f-93bd-2adf619bcb68 requestedMB=32 retainedMB=128
+2026-11-26 01:07:43.778 [http-nio-8082-exec-7] WARN  [169cbb35-063d-4855-80ec-4774fbed1822] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=9f4d1331-5071-44e1-9169-13ed42c1ad5d requestedMB=32 retainedMB=128
+2026-11-26 01:07:43.957 [http-nio-8082-exec-5] WARN  [ac271c73-b393-47f5-9be6-66124dd7f659] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=12d8f2f4-60b2-4840-836a-a8bcd257b6e5 requestedMB=32 retainedMB=128
+2026-11-26 01:07:44.140 [http-nio-8082-exec-6] WARN  [f7b343b8-7ee4-4757-93be-8c40e9ba56a3] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=01a7f895-9ec5-4d10-be0a-0241d34b0e75 requestedMB=32 retainedMB=128
+2026-11-26 01:07:44.338 [http-nio-8082-exec-8] WARN  [ad4c12dc-0a21-4ab1-89f8-a30fbd32468e] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=54f60127-515f-4aa3-8229-06e5f8cb9804 requestedMB=32 retainedMB=128
+2026-11-26 01:07:44.588 [http-nio-8082-exec-9] WARN  [f3b93d92-a84a-4f6c-ae32-0bd233e03c16] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=1f3aa7af-ef00-4644-8692-b00c9fa13a03 requestedMB=32 retainedMB=128
+2026-11-26 01:07:44.770 [http-nio-8082-exec-10] WARN  [fe54b393-6a4a-45da-b8e9-59213a87dcb1] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=dc8ee1b2-f3f8-4072-836e-5da6adacfc2a requestedMB=32 retainedMB=128
+2026-11-26 01:07:44.950 [http-nio-8082-exec-2] WARN  [3eeb628c-9767-4aa6-bd26-b6a2d1844bbb] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=98c0003f-970d-43a3-b608-dfa2742d7fc9 requestedMB=32 retainedMB=128
+2026-11-26 01:07:45.129 [http-nio-8082-exec-3] WARN  [b07e2d06-4a1d-41fd-9459-5bc459bf2dea] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=8d5e16ca-a634-4861-bd97-c19742ec2683 requestedMB=32 retainedMB=128
+2026-11-26 01:07:45.309 [http-nio-8082-exec-1] WARN  [5117e11a-bc8b-411f-8dee-72c8b2a16d9b] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=492d1841-c394-404b-930d-c22e0535df60 requestedMB=32 retainedMB=128
+2026-11-26 01:07:45.478 [http-nio-8082-exec-4] WARN  [b08c0442-f773-48eb-811c-fb510b27c323] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=a37ef242-15f3-480b-9cb3-7ab87c35a901 requestedMB=32 retainedMB=128
+2026-11-26 01:07:45.827 [http-nio-8082-exec-7] WARN  [9767bd42-c937-4d5b-8b99-ee6a1d7920b7] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=8dde914a-a268-4db1-8f3d-d06c72798dfd requestedMB=32 retainedMB=128
+2026-11-26 01:07:46.314 [http-nio-8082-exec-5] WARN  [f64d554a-d5a6-4383-aff4-8a42d74d976b] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=eec64650-ebe5-4a12-9042-b97b533369f3 requestedMB=32 retainedMB=128
+2026-11-26 01:07:48.396 [http-nio-8082-exec-6] WARN  [6d89eae8-4a5f-4429-a09e-30f5c3923af1] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=eb83f812-abf5-4cda-9767-6549c54d3e2d requestedMB=32 retainedMB=128
+2026-11-26 01:07:48.563 [http-nio-8082-exec-8] WARN  [258f2f90-28f7-4146-9623-22738a73039c] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=c9d38c7b-cafc-4dab-bbb9-f613123e7429 requestedMB=32 retainedMB=128
+2026-11-26 01:07:48.788 [http-nio-8082-exec-9] WARN  [668d12f4-d915-45ab-a5cf-b378d6410042] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=2b1ac429-6237-4c50-8920-bf50bcc8e7e4 requestedMB=32 retainedMB=128
+2026-11-26 01:07:54.564 [http-nio-8082-exec-2] WARN  [5f82c266-88e9-44c1-b207-1bb001e1c145] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=f93fdb3f-bfb6-4af4-9010-3b4ed692431b requestedMB=32 retainedMB=128
+2026-11-26 01:07:55.436 [http-nio-8082-exec-3] WARN  [3bddb810-14f3-4a94-97fb-2dbb8b6ce52c] c.s.t.c.SreSimulationController - MEMORY_LIMIT_REACHED incidentId=bdc01a99-a0d8-42d6-bdba-017bf6fb0d26 requestedMB=32 retainedMB=128
+2026-11-26 01:08:03.146 [http-nio-8082-exec-1] WARN  [42fa7ac8-9584-4c41-a2d4-d5ea2c737550] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=128
+2026-11-26 01:08:04.630 [http-nio-8082-exec-4] WARN  [1f13fe65-475b-4f63-b182-4998d3c6fdc5] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:10.150 [http-nio-8082-exec-5] WARN  [71f4571f-a78d-4ef3-a781-48257f8a1f42] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:10.705 [http-nio-8082-exec-6] WARN  [3672956d-7029-4924-9477-a4005e354d11] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:10.898 [http-nio-8082-exec-8] WARN  [6d717485-18fd-47ca-ada1-4c2c2f82c716] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:11.086 [http-nio-8082-exec-9] WARN  [868da81d-9cd8-40bb-8df0-5b9ba4cf4f1c] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:11.318 [http-nio-8082-exec-10] WARN  [f1afe415-7117-4c70-b916-2afbcfebec81] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:11.440 [http-nio-8082-exec-2] WARN  [731ae1a2-5077-4a44-9b4e-420fd998302f] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:11.610 [http-nio-8082-exec-3] WARN  [f2cd98bc-006d-4059-a822-e7640eafe575] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:11.786 [http-nio-8082-exec-1] WARN  [bcd3136a-ab92-4ce1-bfc0-12d3a212475f] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:11.947 [http-nio-8082-exec-4] WARN  [b25ad46d-b69b-4ad9-932d-7a7b5f4772c5] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:12.102 [http-nio-8082-exec-7] WARN  [9a2df829-b071-49e1-8a71-bf7e21fe1c0a] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:12.255 [http-nio-8082-exec-5] WARN  [744cb12f-8918-43ee-a62d-c334f3b1c451] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:12.514 [http-nio-8082-exec-6] WARN  [4044b54e-8a3b-4ae3-8240-d1b0a9ced2ae] c.s.t.c.SreSimulationController - MEMORY_RELEASED releasedMB=0
+2026-11-26 01:08:36.741 [File Watcher] INFO  [] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-11-26 01:08:36.850 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - Starting DemoBooksListApplication using Java 17.0.7 with PID 13460 (D:\SD-Works\demo-book-list\target\classes started by Lenovo in D:\SD-Works\demo-book-list)
+2026-11-26 01:08:36.850 [restartedMain] DEBUG [] c.sd.tech.DemoBooksListApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-11-26 01:08:36.850 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - The following 1 profile is active: "sre-lab"
+2026-11-26 01:08:37.217 [restartedMain] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-11-26 01:08:37.218 [restartedMain] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-26 01:08:37.218 [restartedMain] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-11-26 01:08:37.243 [restartedMain] INFO  [] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-26 01:08:37.244 [restartedMain] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 392 ms
+2026-11-26 01:08:37.283 [restartedMain] DEBUG [] c.s.t.f.RequestCorrelationFilter - Filter 'requestCorrelationFilter' configured for use
+2026-11-26 01:08:37.299 [restartedMain] INFO  [] c.s.t.c.SreSimulationController - SRE simulation controller initialized
+2026-11-26 01:08:37.428 [restartedMain] INFO  [] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-11-26 01:08:37.430 [restartedMain] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-11-26 01:08:37.445 [restartedMain] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path ''
+2026-11-26 01:08:37.452 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - Started DemoBooksListApplication in 0.632 seconds (process running for 4644.205)
+2026-11-26 01:08:37.456 [restartedMain] INFO  [] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-11-26 01:08:52.070 [http-nio-8082-exec-1] INFO  [] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-26 01:08:52.070 [http-nio-8082-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-26 01:08:52.071 [http-nio-8082-exec-1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-11-26 01:09:14.262 [http-nio-8082-exec-3] WARN  [78a9e362-e313-4e53-8842-701cf40fb67c] c.s.t.c.SreSimulationController - CPU_SPIKE_STARTED durationSeconds=5
+2026-11-26 01:09:19.261 [http-nio-8082-exec-3] WARN  [78a9e362-e313-4e53-8842-701cf40fb67c] c.s.t.c.SreSimulationController - CPU_SPIKE_COMPLETED durationMs=5000 operations=2241812591958261
+2026-11-26 01:11:27.394 [http-nio-8082-exec-4] TRACE [0dd17d8d-6a83-4521-a1d2-4bd6be0506ec] c.s.t.c.SreSimulationController - TRACE incidentId=21e10256-4e28-41f0-8cfc-ddee3500437e Trace log generated
+2026-11-26 01:11:27.394 [http-nio-8082-exec-4] DEBUG [0dd17d8d-6a83-4521-a1d2-4bd6be0506ec] c.s.t.c.SreSimulationController - DEBUG incidentId=21e10256-4e28-41f0-8cfc-ddee3500437e Debug log generated
+2026-11-26 01:11:27.394 [http-nio-8082-exec-4] INFO  [0dd17d8d-6a83-4521-a1d2-4bd6be0506ec] c.s.t.c.SreSimulationController - INFO incidentId=21e10256-4e28-41f0-8cfc-ddee3500437e Application operating normally
+2026-11-26 01:11:27.394 [http-nio-8082-exec-4] WARN  [0dd17d8d-6a83-4521-a1d2-4bd6be0506ec] c.s.t.c.SreSimulationController - WARN incidentId=21e10256-4e28-41f0-8cfc-ddee3500437e Warning generated
+2026-11-26 01:11:27.394 [http-nio-8082-exec-4] ERROR [0dd17d8d-6a83-4521-a1d2-4bd6be0506ec] c.s.t.c.SreSimulationController - ERROR incidentId=21e10256-4e28-41f0-8cfc-ddee3500437e Simulated error generated
+2026-11-26 01:23:23.516 [http-nio-8082-exec-8] INFO  [6b03144f-3c0f-4047-bce3-d8c17f87c305] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 101 ms
+2026-11-26 01:23:40.788 [http-nio-8082-exec-10] TRACE [5315474f-ea20-4e69-879a-3609220b0006] c.s.t.c.SreSimulationController - TRACE incidentId=5359f013-e756-4a87-a863-e4f6b150bd68 Trace log generated
+2026-11-26 01:23:40.788 [http-nio-8082-exec-10] DEBUG [5315474f-ea20-4e69-879a-3609220b0006] c.s.t.c.SreSimulationController - DEBUG incidentId=5359f013-e756-4a87-a863-e4f6b150bd68 Debug log generated
+2026-11-26 01:23:40.788 [http-nio-8082-exec-10] INFO  [5315474f-ea20-4e69-879a-3609220b0006] c.s.t.c.SreSimulationController - INFO incidentId=5359f013-e756-4a87-a863-e4f6b150bd68 Application operating normally
+2026-11-26 01:23:40.789 [http-nio-8082-exec-10] WARN  [5315474f-ea20-4e69-879a-3609220b0006] c.s.t.c.SreSimulationController - WARN incidentId=5359f013-e756-4a87-a863-e4f6b150bd68 Warning generated
+2026-11-26 01:23:40.789 [http-nio-8082-exec-10] ERROR [5315474f-ea20-4e69-879a-3609220b0006] c.s.t.c.SreSimulationController - ERROR incidentId=5359f013-e756-4a87-a863-e4f6b150bd68 Simulated error generated
+2026-11-26 01:33:48.921 [http-nio-8082-exec-7] TRACE [ed65df0c-c20a-4f3d-b30b-7c175ed274bc] c.s.t.c.SreSimulationController - TRACE incidentId=44109310-f99f-4a0b-baa5-4038ce56d6c9 Trace log generated
+2026-11-26 01:33:48.922 [http-nio-8082-exec-7] DEBUG [ed65df0c-c20a-4f3d-b30b-7c175ed274bc] c.s.t.c.SreSimulationController - DEBUG incidentId=44109310-f99f-4a0b-baa5-4038ce56d6c9 Debug log generated
+2026-11-26 01:33:48.922 [http-nio-8082-exec-7] INFO  [ed65df0c-c20a-4f3d-b30b-7c175ed274bc] c.s.t.c.SreSimulationController - INFO incidentId=44109310-f99f-4a0b-baa5-4038ce56d6c9 Application operating normally
+2026-11-26 01:33:48.922 [http-nio-8082-exec-7] WARN  [ed65df0c-c20a-4f3d-b30b-7c175ed274bc] c.s.t.c.SreSimulationController - WARN incidentId=44109310-f99f-4a0b-baa5-4038ce56d6c9 Warning generated
+2026-11-26 01:33:48.922 [http-nio-8082-exec-7] ERROR [ed65df0c-c20a-4f3d-b30b-7c175ed274bc] c.s.t.c.SreSimulationController - ERROR incidentId=44109310-f99f-4a0b-baa5-4038ce56d6c9 Simulated error generated
+2026-11-26 02:29:12.731 [http-nio-8082-exec-2] TRACE [ce230996-2aa0-4b3b-9f58-82a3215cca44] c.s.t.c.SreSimulationController - TRACE incidentId=c43cfc20-3092-4640-a13a-596f13846a76 Trace log generated
+2026-11-26 02:29:12.739 [http-nio-8082-exec-2] DEBUG [ce230996-2aa0-4b3b-9f58-82a3215cca44] c.s.t.c.SreSimulationController - DEBUG incidentId=c43cfc20-3092-4640-a13a-596f13846a76 Debug log generated
+2026-11-26 02:29:12.739 [http-nio-8082-exec-2] INFO  [ce230996-2aa0-4b3b-9f58-82a3215cca44] c.s.t.c.SreSimulationController - INFO incidentId=c43cfc20-3092-4640-a13a-596f13846a76 Application operating normally
+2026-11-26 02:29:12.739 [http-nio-8082-exec-2] WARN  [ce230996-2aa0-4b3b-9f58-82a3215cca44] c.s.t.c.SreSimulationController - WARN incidentId=c43cfc20-3092-4640-a13a-596f13846a76 Warning generated
+2026-11-26 02:29:12.739 [http-nio-8082-exec-2] ERROR [ce230996-2aa0-4b3b-9f58-82a3215cca44] c.s.t.c.SreSimulationController - ERROR incidentId=c43cfc20-3092-4640-a13a-596f13846a76 Simulated error generated
+2026-11-26 02:29:13.794 [http-nio-8082-exec-3] TRACE [aa919257-4532-40cd-9f0d-544bbc641765] c.s.t.c.SreSimulationController - TRACE incidentId=1f7431a8-330a-45c1-aace-730c6d54b680 Trace log generated
+2026-11-26 02:29:13.795 [http-nio-8082-exec-3] DEBUG [aa919257-4532-40cd-9f0d-544bbc641765] c.s.t.c.SreSimulationController - DEBUG incidentId=1f7431a8-330a-45c1-aace-730c6d54b680 Debug log generated
+2026-11-26 02:29:13.795 [http-nio-8082-exec-3] INFO  [aa919257-4532-40cd-9f0d-544bbc641765] c.s.t.c.SreSimulationController - INFO incidentId=1f7431a8-330a-45c1-aace-730c6d54b680 Application operating normally
+2026-11-26 02:29:13.795 [http-nio-8082-exec-3] WARN  [aa919257-4532-40cd-9f0d-544bbc641765] c.s.t.c.SreSimulationController - WARN incidentId=1f7431a8-330a-45c1-aace-730c6d54b680 Warning generated
+2026-11-26 02:29:13.795 [http-nio-8082-exec-3] ERROR [aa919257-4532-40cd-9f0d-544bbc641765] c.s.t.c.SreSimulationController - ERROR incidentId=1f7431a8-330a-45c1-aace-730c6d54b680 Simulated error generated
+2026-11-26 02:29:44.055 [http-nio-8082-exec-6] ERROR [879019e4-a460-49cc-84fe-bd6a5ba4aee1] c.s.t.c.SreSimulationController - SIMULATED_HTTP_500 Server error generated
+2026-11-26 02:43:34.040 [http-nio-8082-exec-2] TRACE [3c1d22ea-85d6-420d-99cb-772b55cb764e] c.s.t.c.SreSimulationController - TRACE incidentId=5a1884fb-7464-4f19-ba4f-6aae98473f60 Trace log generated
+2026-11-26 02:43:34.040 [http-nio-8082-exec-2] DEBUG [3c1d22ea-85d6-420d-99cb-772b55cb764e] c.s.t.c.SreSimulationController - DEBUG incidentId=5a1884fb-7464-4f19-ba4f-6aae98473f60 Debug log generated
+2026-11-26 02:43:34.040 [http-nio-8082-exec-2] INFO  [3c1d22ea-85d6-420d-99cb-772b55cb764e] c.s.t.c.SreSimulationController - INFO incidentId=5a1884fb-7464-4f19-ba4f-6aae98473f60 Application operating normally
+2026-11-26 02:43:34.040 [http-nio-8082-exec-2] WARN  [3c1d22ea-85d6-420d-99cb-772b55cb764e] c.s.t.c.SreSimulationController - WARN incidentId=5a1884fb-7464-4f19-ba4f-6aae98473f60 Warning generated
+2026-11-26 02:43:34.040 [http-nio-8082-exec-2] ERROR [3c1d22ea-85d6-420d-99cb-772b55cb764e] c.s.t.c.SreSimulationController - ERROR incidentId=5a1884fb-7464-4f19-ba4f-6aae98473f60 Simulated error generated
+2026-11-26 02:43:34.950 [http-nio-8082-exec-3] TRACE [9693f7cc-3557-4318-aba7-fbd301ff7b50] c.s.t.c.SreSimulationController - TRACE incidentId=2c39c115-5bad-4714-a8ec-8334a3006a91 Trace log generated
+2026-11-26 02:43:34.950 [http-nio-8082-exec-3] DEBUG [9693f7cc-3557-4318-aba7-fbd301ff7b50] c.s.t.c.SreSimulationController - DEBUG incidentId=2c39c115-5bad-4714-a8ec-8334a3006a91 Debug log generated
+2026-11-26 02:43:34.950 [http-nio-8082-exec-3] INFO  [9693f7cc-3557-4318-aba7-fbd301ff7b50] c.s.t.c.SreSimulationController - INFO incidentId=2c39c115-5bad-4714-a8ec-8334a3006a91 Application operating normally
+2026-11-26 02:43:34.950 [http-nio-8082-exec-3] WARN  [9693f7cc-3557-4318-aba7-fbd301ff7b50] c.s.t.c.SreSimulationController - WARN incidentId=2c39c115-5bad-4714-a8ec-8334a3006a91 Warning generated
+2026-11-26 02:43:34.950 [http-nio-8082-exec-3] ERROR [9693f7cc-3557-4318-aba7-fbd301ff7b50] c.s.t.c.SreSimulationController - ERROR incidentId=2c39c115-5bad-4714-a8ec-8334a3006a91 Simulated error generated
+2026-11-26 02:43:35.102 [http-nio-8082-exec-4] TRACE [5fa12eeb-eecf-4ec9-8f7a-5c148770d4cc] c.s.t.c.SreSimulationController - TRACE incidentId=f90dc099-5a6c-404f-a2b2-cf5226665a66 Trace log generated
+2026-11-26 02:43:35.102 [http-nio-8082-exec-4] DEBUG [5fa12eeb-eecf-4ec9-8f7a-5c148770d4cc] c.s.t.c.SreSimulationController - DEBUG incidentId=f90dc099-5a6c-404f-a2b2-cf5226665a66 Debug log generated
+2026-11-26 02:43:35.102 [http-nio-8082-exec-4] INFO  [5fa12eeb-eecf-4ec9-8f7a-5c148770d4cc] c.s.t.c.SreSimulationController - INFO incidentId=f90dc099-5a6c-404f-a2b2-cf5226665a66 Application operating normally
+2026-11-26 02:43:35.102 [http-nio-8082-exec-4] WARN  [5fa12eeb-eecf-4ec9-8f7a-5c148770d4cc] c.s.t.c.SreSimulationController - WARN incidentId=f90dc099-5a6c-404f-a2b2-cf5226665a66 Warning generated
+2026-11-26 02:43:35.102 [http-nio-8082-exec-4] ERROR [5fa12eeb-eecf-4ec9-8f7a-5c148770d4cc] c.s.t.c.SreSimulationController - ERROR incidentId=f90dc099-5a6c-404f-a2b2-cf5226665a66 Simulated error generated
+2026-11-26 02:43:35.270 [http-nio-8082-exec-5] TRACE [c41a80e0-6278-4d2c-8d0c-e5a613c87db7] c.s.t.c.SreSimulationController - TRACE incidentId=281787e1-4ec9-45d4-9197-aff251e4f4ac Trace log generated
+2026-11-26 02:43:35.270 [http-nio-8082-exec-5] DEBUG [c41a80e0-6278-4d2c-8d0c-e5a613c87db7] c.s.t.c.SreSimulationController - DEBUG incidentId=281787e1-4ec9-45d4-9197-aff251e4f4ac Debug log generated
+2026-11-26 02:43:35.270 [http-nio-8082-exec-5] INFO  [c41a80e0-6278-4d2c-8d0c-e5a613c87db7] c.s.t.c.SreSimulationController - INFO incidentId=281787e1-4ec9-45d4-9197-aff251e4f4ac Application operating normally
+2026-11-26 02:43:35.270 [http-nio-8082-exec-5] WARN  [c41a80e0-6278-4d2c-8d0c-e5a613c87db7] c.s.t.c.SreSimulationController - WARN incidentId=281787e1-4ec9-45d4-9197-aff251e4f4ac Warning generated
+2026-11-26 02:43:35.270 [http-nio-8082-exec-5] ERROR [c41a80e0-6278-4d2c-8d0c-e5a613c87db7] c.s.t.c.SreSimulationController - ERROR incidentId=281787e1-4ec9-45d4-9197-aff251e4f4ac Simulated error generated
+2026-11-26 02:43:35.408 [http-nio-8082-exec-6] TRACE [346647b4-e649-4eec-87c0-811d8eb3cd35] c.s.t.c.SreSimulationController - TRACE incidentId=49289ea1-430f-4b1b-acf3-d8f3166be3b6 Trace log generated
+2026-11-26 02:43:35.408 [http-nio-8082-exec-6] DEBUG [346647b4-e649-4eec-87c0-811d8eb3cd35] c.s.t.c.SreSimulationController - DEBUG incidentId=49289ea1-430f-4b1b-acf3-d8f3166be3b6 Debug log generated
+2026-11-26 02:43:35.408 [http-nio-8082-exec-6] INFO  [346647b4-e649-4eec-87c0-811d8eb3cd35] c.s.t.c.SreSimulationController - INFO incidentId=49289ea1-430f-4b1b-acf3-d8f3166be3b6 Application operating normally
+2026-11-26 02:43:35.408 [http-nio-8082-exec-6] WARN  [346647b4-e649-4eec-87c0-811d8eb3cd35] c.s.t.c.SreSimulationController - WARN incidentId=49289ea1-430f-4b1b-acf3-d8f3166be3b6 Warning generated
+2026-11-26 02:43:35.408 [http-nio-8082-exec-6] ERROR [346647b4-e649-4eec-87c0-811d8eb3cd35] c.s.t.c.SreSimulationController - ERROR incidentId=49289ea1-430f-4b1b-acf3-d8f3166be3b6 Simulated error generated
+2026-11-26 02:43:35.622 [http-nio-8082-exec-7] TRACE [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - TRACE incidentId=81212795-480b-43fb-80ee-0afc3861c32e Trace log generated
+2026-11-26 02:43:35.622 [http-nio-8082-exec-7] DEBUG [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - DEBUG incidentId=81212795-480b-43fb-80ee-0afc3861c32e Debug log generated
+2026-11-26 02:43:35.622 [http-nio-8082-exec-7] INFO  [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - INFO incidentId=81212795-480b-43fb-80ee-0afc3861c32e Application operating normally
+2026-11-26 02:43:35.622 [http-nio-8082-exec-7] WARN  [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - WARN incidentId=81212795-480b-43fb-80ee-0afc3861c32e Warning generated
+2026-11-26 02:43:35.622 [http-nio-8082-exec-7] ERROR [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - ERROR incidentId=81212795-480b-43fb-80ee-0afc3861c32e Simulated error generated
