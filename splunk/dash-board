@@ -1,0 +1,284 @@
+
+{
+  "title": "Spring Boot Application Monitoring",
+  "description": "Spring Boot SRE Dashboard - application logs, severity, HTTP 500 incidents and request tracing",
+  "inputs": {
+    "input_global_trp": {
+      "type": "input.timerange",
+      "title": "Global Time Range",
+      "options": {
+        "token": "global_time",
+        "defaultValue": "-24h@h,now"
+      }
+    }
+  },
+  "defaults": {
+    "dataSources": {
+      "ds.search": {
+        "options": {
+          "queryParameters": {
+            "earliest": "$global_time.earliest$",
+            "latest": "$global_time.latest$"
+          }
+        }
+      }
+    }
+  },
+  "dataSources": {
+    "ds_total_errors": {
+      "type": "ds.search",
+      "name": "Total ERROR Logs",
+      "options": {
+        "query": "index=main sourcetype=book_api\n| rex field=_raw \"\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[\"\n| search log_level=\"ERROR\"\n| stats count AS total_errors"
+      }
+    },
+    "ds_total_warnings": {
+      "type": "ds.search",
+      "name": "Total WARN Logs",
+      "options": {
+        "query": "index=main sourcetype=book_api\n| rex field=_raw \"\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[\"\n| search log_level=\"WARN\"\n| stats count AS total_warnings"
+      }
+    },
+    "ds_severity": {
+      "type": "ds.search",
+      "name": "Log Severity Distribution",
+      "options": {
+        "query": "index=main sourcetype=book_api\n| rex field=_raw \"\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[\"\n| stats count AS log_count BY log_level\n| sort - log_count"
+      }
+    },
+    "ds_error_trend": {
+      "type": "ds.search",
+      "name": "Application ERROR Trend",
+      "options": {
+        "query": "index=main sourcetype=book_api\n| rex field=_raw \"\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[\"\n| search log_level=\"ERROR\"\n| timechart span=5m count AS error_count"
+      }
+    },
+    "ds_warning_trend": {
+      "type": "ds.search",
+      "name": "Application WARN Trend",
+      "options": {
+        "query": "index=main sourcetype=book_api\n| rex field=_raw \"\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[\"\n| search log_level=\"WARN\"\n| timechart span=5m count AS warning_count"
+      }
+    },
+    "ds_http_500": {
+      "type": "ds.search",
+      "name": "HTTP 500 Incidents",
+      "options": {
+        "query": "index=main sourcetype=book_api \"SIMULATED_HTTP_500\"\n| rex field=_raw \"\\[(?<thread>[^\\]]+)\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[(?<request_id>[^\\]]+)\\]\\s+(?<logger>\\S+)\\s+-\\s+(?<message>.*)\"\n| table _time request_id thread logger message\n| sort - _time\n| head 50"
+      }
+    },
+    "ds_recent_errors": {
+      "type": "ds.search",
+      "name": "Recent Application Errors",
+      "options": {
+        "query": "index=main sourcetype=book_api\n| rex field=_raw \"\\[(?<thread>[^\\]]+)\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[(?<request_id>[^\\]]+)\\]\\s+(?<logger>\\S+)\\s+-\\s+(?<message>.*)\"\n| search log_level=\"ERROR\"\n| table _time request_id thread logger message\n| sort - _time\n| head 50"
+      }
+    },
+    "ds_request_ids": {
+      "type": "ds.search",
+      "name": "Request ID Investigation",
+      "options": {
+        "query": "index=main sourcetype=book_api\n| rex field=_raw \"\\[(?<thread>[^\\]]+)\\]\\s+(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\\s+\\[(?<request_id>[^\\]]+)\\]\\s+(?<logger>\\S+)\\s+-\\s+(?<message>.*)\"\n| search request_id=*\n| table _time request_id log_level thread logger message\n| sort - _time\n| head 100"
+      }
+    }
+  },
+  "visualizations": {
+    "viz_total_errors": {
+      "type": "splunk.singlevalue",
+      "title": "Total ERROR Logs",
+      "dataSources": {
+        "primary": "ds_total_errors"
+      },
+      "options": {
+        "backgroundColor": "transparent",
+        "showTrendIndicator": false
+      }
+    },
+    "viz_total_warnings": {
+      "type": "splunk.singlevalue",
+      "title": "Total WARN Logs",
+      "dataSources": {
+        "primary": "ds_total_warnings"
+      },
+      "options": {
+        "backgroundColor": "transparent",
+        "showTrendIndicator": false
+      }
+    },
+    "viz_severity": {
+      "type": "splunk.bar",
+      "title": "Log Severity Distribution",
+      "dataSources": {
+        "primary": "ds_severity"
+      },
+      "options": {
+        "xAxisTitleText": "Log Level",
+        "yAxisTitleText": "Number of Logs",
+        "legendDisplay": "off",
+        "backgroundColor": "transparent"
+      }
+    },
+    "viz_error_trend": {
+      "type": "splunk.line",
+      "title": "Application ERROR Trend",
+      "dataSources": {
+        "primary": "ds_error_trend"
+      },
+      "options": {
+        "legendDisplay": "off",
+        "backgroundColor": "transparent",
+        "showMarkers": true
+      }
+    },
+    "viz_warning_trend": {
+      "type": "splunk.line",
+      "title": "Application WARN Trend",
+      "dataSources": {
+        "primary": "ds_warning_trend"
+      },
+      "options": {
+        "legendDisplay": "off",
+        "backgroundColor": "transparent",
+        "showMarkers": true
+      }
+    },
+    "viz_http_500": {
+      "type": "splunk.table",
+      "title": "HTTP 500 Incidents",
+      "dataSources": {
+        "primary": "ds_http_500"
+      },
+      "options": {
+        "count": 10,
+        "backgroundColor": "transparent"
+      }
+    },
+    "viz_recent_errors": {
+      "type": "splunk.table",
+      "title": "Recent Application Errors",
+      "dataSources": {
+        "primary": "ds_recent_errors"
+      },
+      "options": {
+        "count": 10,
+        "backgroundColor": "transparent"
+      }
+    },
+    "viz_request_ids": {
+      "type": "splunk.table",
+      "title": "Request ID Investigation",
+      "dataSources": {
+        "primary": "ds_request_ids"
+      },
+      "options": {
+        "count": 10,
+        "backgroundColor": "transparent"
+      }
+    }
+  },
+  "layout": {
+    "globalInputs": [
+      "input_global_trp"
+    ],
+    "tabs": {
+      "items": [
+        {
+          "label": "Application Monitoring",
+          "layoutId": "layout_1"
+        }
+      ]
+    },
+    "layoutDefinitions": {
+      "layout_1": {
+        "type": "absolute",
+        "options": {
+          "width": 1400,
+          "height": 1500,
+          "display": "auto-scale"
+        },
+        "structure": [
+          {
+            "item": "viz_total_errors",
+            "type": "block",
+            "position": {
+              "x": 20,
+              "y": 20,
+              "w": 650,
+              "h": 170
+            }
+          },
+          {
+            "item": "viz_total_warnings",
+            "type": "block",
+            "position": {
+              "x": 700,
+              "y": 20,
+              "w": 650,
+              "h": 170
+            }
+          },
+          {
+            "item": "viz_severity",
+            "type": "block",
+            "position": {
+              "x": 20,
+              "y": 220,
+              "w": 650,
+              "h": 300
+            }
+          },
+          {
+            "item": "viz_error_trend",
+            "type": "block",
+            "position": {
+              "x": 700,
+              "y": 220,
+              "w": 650,
+              "h": 300
+            }
+          },
+          {
+            "item": "viz_warning_trend",
+            "type": "block",
+            "position": {
+              "x": 20,
+              "y": 550,
+              "w": 650,
+              "h": 300
+            }
+          },
+          {
+            "item": "viz_http_500",
+            "type": "block",
+            "position": {
+              "x": 700,
+              "y": 550,
+              "w": 650,
+              "h": 300
+            }
+          },
+          {
+            "item": "viz_recent_errors",
+            "type": "block",
+            "position": {
+              "x": 20,
+              "y": 880,
+              "w": 1330,
+              "h": 280
+            }
+          },
+          {
+            "item": "viz_request_ids",
+            "type": "block",
+            "position": {
+              "x": 20,
+              "y": 1180,
+              "w": 1330,
+              "h": 280
+            }
+          }
+        ]
+      }
+    }
+  }
+}

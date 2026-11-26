@@ -198,3 +198,22 @@ Unconditional classes:
 2026-11-26 02:43:35.622 [http-nio-8082-exec-7] INFO  [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - INFO incidentId=81212795-480b-43fb-80ee-0afc3861c32e Application operating normally
 2026-11-26 02:43:35.622 [http-nio-8082-exec-7] WARN  [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - WARN incidentId=81212795-480b-43fb-80ee-0afc3861c32e Warning generated
 2026-11-26 02:43:35.622 [http-nio-8082-exec-7] ERROR [e400d88a-664e-4a12-90c0-fc2ca14db307] c.s.t.c.SreSimulationController - ERROR incidentId=81212795-480b-43fb-80ee-0afc3861c32e Simulated error generated
+2026-11-26 21:31:14.893 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - Starting DemoBooksListApplication using Java 17.0.7 with PID 5716 (D:\SD-Works\demo-book-list\target\classes started by Lenovo in D:\SD-Works\demo-book-list)
+2026-11-26 21:31:14.895 [restartedMain] DEBUG [] c.sd.tech.DemoBooksListApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-11-26 21:31:14.895 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - The following 1 profile is active: "sre-lab"
+2026-11-26 21:31:14.970 [restartedMain] INFO  [] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-11-26 21:31:14.970 [restartedMain] INFO  [] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-11-26 21:31:16.527 [restartedMain] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-11-26 21:31:16.542 [restartedMain] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-26 21:31:16.542 [restartedMain] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-11-26 21:31:16.614 [restartedMain] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-26 21:31:16.615 [restartedMain] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1645 ms
+2026-11-26 21:31:16.780 [restartedMain] DEBUG [] c.s.t.f.RequestCorrelationFilter - Filter 'requestCorrelationFilter' configured for use
+2026-11-26 21:31:16.841 [restartedMain] INFO  [] c.s.t.c.SreSimulationController - SRE simulation controller initialized
+2026-11-26 21:31:17.446 [restartedMain] INFO  [] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-11-26 21:31:17.451 [restartedMain] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-11-26 21:31:17.519 [restartedMain] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path ''
+2026-11-26 21:31:17.538 [restartedMain] INFO  [] c.sd.tech.DemoBooksListApplication - Started DemoBooksListApplication in 3.348 seconds (process running for 4.606)
+2026-11-26 21:31:18.049 [RMI TCP Connection(9)-127.0.0.1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-26 21:31:18.050 [RMI TCP Connection(9)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-26 21:31:18.051 [RMI TCP Connection(9)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms

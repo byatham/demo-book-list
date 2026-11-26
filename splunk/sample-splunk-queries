@@ -14,3 +14,5 @@ index=main sourcetype=book_api
 | rex field=_raw "(?i)\b(?<log_level>TRACE|DEBUG|INFO|WARN|ERROR)\b"
 | stats count by log_level
 
+
+
